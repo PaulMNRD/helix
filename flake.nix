@@ -19,7 +19,7 @@
 
       yaziPicker = yaziArgs: [
         ":sh rm -f /tmp/unique-file"
-        ":insert-output yazi ${yaziArgs}--chooser-file=/tmp/unique-file"
+        ":insert-output env -u XDG_CONFIG_HOME yazi ${yaziArgs}--chooser-file=/tmp/unique-file"
         ":insert-output echo \"\\x1b[?2004h\" > /dev/tty"
         ":open %sh{cat /tmp/unique-file}"
         ":redraw"
